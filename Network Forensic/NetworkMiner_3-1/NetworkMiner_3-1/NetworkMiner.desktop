@@ -1,0 +1,12 @@
+﻿[Desktop Entry]
+Name=NetworkMiner
+Comment=Extracts files, images, emails and passwords from PCAP files
+Encoding=UTF-8
+Exec=mono NetworkMiner.exe %f
+Icon=./Images/NetworkMiner_logo_313x313.png
+StartupNotify=true
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+MimeType=application/x-pcap;application/vnd.tcpdump.pcap;application/x-pcapng;
+Categories=Network;Monitor;
