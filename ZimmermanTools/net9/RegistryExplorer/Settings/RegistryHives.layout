@@ -93,7 +93,7 @@
         <property name="FormatString" />
         <property name="FormatType">None</property>
       </property>
-      <property name="Width">296</property>
+      <property name="Width">205</property>
       <property name="SeparatorWidth">0</property>
       <property name="MinWidth">33</property>
       <property name="MaxWidth">0</property>
@@ -275,9 +275,9 @@
   <property name="NewItemRowText" />
   <property name="ActiveFilterEnabled">true</property>
   <property name="FindPanelVisible">false</property>
-  <property name="FindFilterText">usb</property>
+  <property name="FindFilterText" />
   <property name="Bands" iskey="true" value="0" />
   <property name="FormatConditions" iskey="true" value="0" />
-  <property name="ActiveFilterString" />
+  <property name="ActiveFilterString">Contains([Key name], 'ComputerName')</property>
   <property name="FormatRules" iskey="true" value="0" />
 </XtraSerializer>
