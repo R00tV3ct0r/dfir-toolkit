@@ -93,7 +93,7 @@
         <property name="FormatString" />
         <property name="FormatType">None</property>
       </property>
-      <property name="Width">374</property>
+      <property name="Width">67</property>
       <property name="SeparatorWidth">0</property>
       <property name="MinWidth">33</property>
       <property name="MaxWidth">0</property>
@@ -275,7 +275,7 @@
   <property name="NewItemRowText" />
   <property name="ActiveFilterEnabled">true</property>
   <property name="FindPanelVisible">false</property>
-  <property name="FindFilterText">app path</property>
+  <property name="FindFilterText" />
   <property name="Bands" iskey="true" value="0" />
   <property name="FormatConditions" iskey="true" value="0" />
   <property name="ActiveFilterString" />

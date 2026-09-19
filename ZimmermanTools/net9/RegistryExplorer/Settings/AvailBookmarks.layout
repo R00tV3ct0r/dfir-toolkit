@@ -18,8 +18,6 @@
   <property name="OptionsView" isnull="true" iskey="true">
     <property name="AutoWidth">false</property>
     <property name="ShowIndentAsRowStyle">true</property>
-    <property name="EnableAppearanceOddRow">true</property>
-    <property name="EnableAppearanceEvenRow">true</property>
     <property name="ShowAutoFilterRow">true</property>
   </property>
   <property name="OptionsBehavior" isnull="true" iskey="true">
@@ -89,7 +87,7 @@
         <property name="FormatString" />
         <property name="FormatType">None</property>
       </property>
-      <property name="Width">355</property>
+      <property name="Width">67</property>
       <property name="SeparatorWidth">0</property>
       <property name="MinWidth">49</property>
       <property name="MaxWidth">0</property>

@@ -105,7 +105,7 @@
       <property name="Name">colSourceModified</property>
       <property name="VisibleIndex">6</property>
       <property name="Visible">true</property>
-      <property name="Width">133</property>
+      <property name="Width">180</property>
       <property name="MinWidth">20</property>
       <property name="MaxWidth">0</property>
     </property>
@@ -113,7 +113,7 @@
       <property name="Name">colSourceAccessed</property>
       <property name="VisibleIndex">7</property>
       <property name="Visible">true</property>
-      <property name="Width">137</property>
+      <property name="Width">180</property>
       <property name="MinWidth">20</property>
       <property name="MaxWidth">0</property>
     </property>
@@ -161,7 +161,7 @@
       <property name="Name">colLastRun</property>
       <property name="VisibleIndex">13</property>
       <property name="Visible">true</property>
-      <property name="Width">84</property>
+      <property name="Width">190</property>
       <property name="MinWidth">20</property>
       <property name="MaxWidth">0</property>
     </property>
@@ -311,7 +311,7 @@
       <property name="DisplayFormat"> (Count: {0:N0})</property>
     </property>
   </property>
-  <property name="ActiveFilterString">Contains([ExecutableName], 'tor')</property>
+  <property name="ActiveFilterString">Contains([ExecutableName], 'mssetup.exe')</property>
   <property name="MRUFiltersInfo" iskey="true" value="1">
     <property name="Item1" isnull="true" iskey="true">
       <property name="NonColumnFilter" />
@@ -326,6 +326,15 @@
     </property>
   </property>
   <property name="FormatRules" iskey="true" value="0" />
+  <property name="SortInfoState" iskey="true" value="1">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Orders">Ascending</property>
+      <property name="Columns">colSourceAccessed</property>
+    </property>
+    <property name="Content" isnull="true" iskey="true">
+      <property name="GroupCount">0</property>
+    </property>
+  </property>
   <property name="GroupSummarySortInfoState" />
   <property name="FindFilterText" />
   <property name="FindPanelVisible">false</property>
