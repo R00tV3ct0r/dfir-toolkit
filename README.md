@@ -41,6 +41,7 @@ For a more complete DFIR environment, the following tools are also recommended:
 * [**IDA**](https://hex-rays.com/ida-home) — disassembly and reverse engineering
 * [**WinDbg**](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/) — debugging and crash dump / memory analysis
 * [**DCode**](https://www.digital-detective.net/dcode/) — forensic timestamp decoding and analysis
+* [**Volatility**](https://github.com/volatilityfoundation/volatility) & [**Volatility3**](https://github.com/volatilityfoundation/volatility3) — memory forensics and RAM dump analysis
 
 ---
 
