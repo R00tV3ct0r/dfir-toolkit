@@ -6,18 +6,14 @@ An organized collection of tools for **Digital Forensics & Incident Response (DF
 
 ## 📁 Repository Structure
 
-| Directory                                                | Description                                                       |
-| -------------------------------------------------------- | ----------------------------------------------------------------- |
-| `Disk forensic/RegRipper3.0-master/`                     | Windows Registry extraction and analysis with RegRipper           |
-| `Malware Analysis/`                                      | Static and dynamic malware analysis tools                         |
-| `MemProcFS_files_and_binaries_v5.18.4-win_x64-20260812/` | Memory analysis framework for mounting and exploring memory dumps |
-| `Mobile forensic/`                                       | Mobile data extraction and analysis tools                         |
-| `Network Forensic/`                                      | Network traffic capture and analysis tools                        |
-| `Nirsoft_Tools/`                                         | NirSoft utilities for system and network analysis                 |
-| `Processus/`                                             | Process analysis tools                                            |
-| `Strings/`                                               | String extraction and analysis tools                              |
-| `ZimmermanTools/`                                        | Eric Zimmerman's forensic toolset                                 |
-| `ssim-calculator-master/`                                | Structural Similarity Index (SSIM) image comparison tool          |
+| Directory           | Description                                            |
+| ------------------- | ------------------------------------------------------ |
+| `Disk forensic/`    | Windows disk and registry forensic analysis tools      |
+| `Memory Forensic/`  | Memory analysis and RAM dump investigation tools       |
+| `Malware Analysis/` | Static malware and shellcode analysis tools            |
+| `Mobile forensic/`  | Android and iOS forensic analysis tools                |
+| `Network Forensic/` | Network traffic analysis and investigation tools       |
+| `Miscellaneous/`    | General-purpose forensic and system analysis utilities |
 
 ---
 
@@ -28,7 +24,7 @@ git clone https://github.com/R00tV3ct0r/dfir-toolkit.git
 cd dfir-toolkit
 ```
 
-The tools are ready to use with no dependencies and prerequisites required.
+The tools are ready to use with no additional dependencies or prerequisites in most cases.
 
 ---
 
@@ -41,7 +37,7 @@ For a more complete DFIR environment, the following tools are also recommended:
 * [**IDA**](https://hex-rays.com/ida-home) — disassembly and reverse engineering
 * [**WinDbg**](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/) — debugging and crash dump / memory analysis
 * [**DCode**](https://www.digital-detective.net/dcode/) — forensic timestamp decoding and analysis
-* [**Volatility**](https://github.com/volatilityfoundation/volatility) & [**Volatility3**](https://github.com/volatilityfoundation/volatility3) — memory forensics and RAM dump analysis
+* [**Volatility 2**](https://github.com/volatilityfoundation/volatility) & [**Volatility 3**](https://github.com/volatilityfoundation/volatility3) — memory forensics and RAM dump analysis
 
 ---
 
@@ -50,7 +46,15 @@ For a more complete DFIR environment, the following tools are also recommended:
 * [**ZimmermanTools**](https://ericzimmerman.github.io/) — Eric Zimmerman's forensic tools
 * [**MemProcFS**](https://github.com/ufrisk/MemProcFS) — memory analysis framework
 * [**RegRipper**](https://github.com/keydet89/RegRipper3.0) — Windows Registry analysis
-* [**NirSoft**](https://www.nirsoft.net/utils/) — system and network utilities
+* [**NirSoft**](https://www.nirsoft.net/utils/) — Windows system and network utilities
+* [**Sysinternals Suite**](https://learn.microsoft.com/en-us/sysinternals/downloads/sysinternals-suite) — Windows system and troubleshooting utilities
+* [**Detect It Easy**](https://github.com/horsicq/Detect-It-Easy) — file identification and static analysis
+* [**scdbg**](https://sandsprite.com/CodeStuff/scdbg_manual/MANUAL_EN.html) — shellcode analysis and emulation
+* [**ALEAPP**](https://github.com/abrignoni/ALEAPP) — Android forensic artifact analysis
+* [**iLEAPP**](https://github.com/abrignoni/iLEAPP) — iOS forensic artifact analysis
+* [**NetworkMiner**](https://www.netresec.com/?page=NetworkMiner) — network forensic analysis
+* [**Zed**](https://github.com/brimdata/zed-archive) — network data processing and analysis
+* [**Strings**](https://learn.microsoft.com/en-us/sysinternals/downloads/strings) — string extraction utility
 
 ---
 
