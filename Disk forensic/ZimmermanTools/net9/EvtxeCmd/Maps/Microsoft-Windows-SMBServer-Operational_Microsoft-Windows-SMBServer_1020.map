@@ -19,6 +19,13 @@ Maps:
         Name: ClientName
         Value: "/Event/UserData/EventData/ClientName"
   -
+    Property: ExecutableInfo
+    PropertyValue: "FileName: %FileName%"
+    Values:
+      -
+        Name: FileName
+        Value: "/Event/UserData/EventData/FileName"
+  -
     Property: PayloadData1
     PropertyValue: "ShareName: %ShareName%"
     Values:
@@ -27,20 +34,13 @@ Maps:
         Value: "/Event/UserData/EventData/ShareName"
   -
     Property: PayloadData2
-    PropertyValue: "FileName: %FileName%"
-    Values:
-      -
-        Name: FileName
-        Value: "/Event/UserData/EventData/FileName"
-  -
-    Property: PayloadData3
     PropertyValue: "The threshold is %Threshold% milliseconds (15 seconds)"
     Values:
       -
         Name: Threshold
         Value: "/Event/UserData/EventData/Threshold"
   -
-    Property: PayloadData4
+    Property: PayloadData3
     PropertyValue: "The I/O operation took %Duration% milliseconds"
     Values:
       -
@@ -49,10 +49,9 @@ Maps:
 
 # Documentation:
 # https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-event-id-1020-warnings-file-server
-# https://github.com/nasbench/EVTX-ETW-Resources/blob/main/ETWProvidersCSVs/Internal/Microsoft-Windows-SMBServer.csv
 #
 # Example Event Data:
-# <Event>
+#<Event>
 #  <System>
 #    <Provider Name="Microsoft-Windows-SMBServer" Guid="d48ce617-33a2-4bc3-a5c7-11aa4f29619e" />
 #    <EventID>1020</EventID>
@@ -92,4 +91,4 @@ Maps:
 #      <TunneledControl>0</TunneledControl>
 #    </EventData>
 #  </UserData>
-# </Event>
+#</Event>

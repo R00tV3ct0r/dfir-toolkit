@@ -27,34 +27,9 @@ Maps:
         Value: "/Event/EventData/Data[@Name=\"Version_number\"]"
 
 # Documentation
-# https://github.com/nasbench/EVTX-ETW-Resources/blob/main/ETWProvidersCSVs/ThirdParty/Splashtop-Splashtop%20Business%20app-Remote%20Session.csv
+# N/A
 #
-# Event Schema
-# ]]></Template>
-#             </Event>
-#             <Event>
-#                 <Id>1001</Id>
-#                 <Version>0</Version>
-#                 <Channel>Splashtop-Splashtop Streamer-Remote Session/Operational</Channel>
-#                 <Level>Information</Level>
-#                 <Message><![CDATA[
-# The Splashtop remote session (%1) has ended. The remote session lasted %2.
-#
-# App version: %3]]></Message>
-#                 <Template><![CDATA[
-# <template xmlns="http://schemas.microsoft.com/win/2004/08/events">
-#
-#   <data name="Session_ID" inType="win:UnicodeString" outType="xs:string"/>
-#
-#   <data name="Duration_Time" inType="win:UnicodeString" outType="xs:string"/>
-#
-#   <data name="Version_number" inType="win:UnicodeString" outType="xs:string"/>
-#
-# </template>
-#
-#
-# Example Event Data:
-# <Event>
+#<Event>
 #  <System>
 #    <Provider Name="Splashtop-Splashtop Streamer-Remote Session" Guid="66a2ea53-fc6c-42e5-9176-18749ab2ca11" />
 #    <EventID>1001</EventID>
@@ -76,4 +51,4 @@ Maps:
 #    <Data Name="Duration_Time">00:00:07</Data>
 #    <Data Name="Version_number">3.4.4.0</Data>
 #  </EventData>
-# </Event>
+#</Event>

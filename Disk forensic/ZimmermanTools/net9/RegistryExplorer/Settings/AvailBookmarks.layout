@@ -8,7 +8,6 @@
   <property name="TreeViewFieldName" />
   <property name="TreeViewColumnName" />
   <property name="ViewStyle">Default</property>
-  <property name="HtmlTemplates" iskey="true" value="0" />
   <property name="ImageIndexFieldName">ImageIndex</property>
   <property name="KeyFieldName">ID</property>
   <property name="ParentFieldName">ParentID</property>
@@ -18,6 +17,8 @@
   <property name="OptionsView" isnull="true" iskey="true">
     <property name="AutoWidth">false</property>
     <property name="ShowIndentAsRowStyle">true</property>
+    <property name="EnableAppearanceOddRow">true</property>
+    <property name="EnableAppearanceEvenRow">true</property>
     <property name="ShowAutoFilterRow">true</property>
   </property>
   <property name="OptionsBehavior" isnull="true" iskey="true">
@@ -40,7 +41,6 @@
   <property name="ShowButtonMode">ShowForFocusedCell</property>
   <property name="IndicatorWidth">-1</property>
   <property name="PreviewLineCount">1</property>
-  <property name="PreviewIndent">-1</property>
   <property name="RowHeight">-1</property>
   <property name="ColumnPanelRowHeight">-1</property>
   <property name="BandPanelRowHeight">-1</property>
@@ -58,7 +58,6 @@
       <property name="ImageAlignment">Near</property>
       <property name="AccessibleName" isnull="true" />
       <property name="AccessibleDescription" isnull="true" />
-      <property name="AccessibleRole">Default</property>
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="ReadOnly">true</property>
         <property name="AllowEdit">false</property>
@@ -87,7 +86,7 @@
         <property name="FormatString" />
         <property name="FormatType">None</property>
       </property>
-      <property name="Width">67</property>
+      <property name="Width">211</property>
       <property name="SeparatorWidth">0</property>
       <property name="MinWidth">49</property>
       <property name="MaxWidth">0</property>
@@ -108,7 +107,6 @@
       <property name="ImageAlignment">Near</property>
       <property name="AccessibleName" isnull="true" />
       <property name="AccessibleDescription" isnull="true" />
-      <property name="AccessibleRole">Default</property>
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="ReadOnly">true</property>
         <property name="AllowEdit">false</property>
@@ -158,7 +156,6 @@
       <property name="ImageAlignment">Near</property>
       <property name="AccessibleName" isnull="true" />
       <property name="AccessibleDescription" isnull="true" />
-      <property name="AccessibleRole">Default</property>
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="ReadOnly">true</property>
         <property name="AllowEdit">false</property>
@@ -209,7 +206,6 @@
       <property name="ImageAlignment">Near</property>
       <property name="AccessibleName" isnull="true" />
       <property name="AccessibleDescription" isnull="true" />
-      <property name="AccessibleRole">Default</property>
       <property name="OptionsColumn" isnull="true" iskey="true">
         <property name="ReadOnly">true</property>
         <property name="AllowEdit">false</property>

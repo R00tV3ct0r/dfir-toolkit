@@ -52,7 +52,7 @@
   <property name="HorzScrollStep">0</property>
   <property name="ActiveFilterEnabled">true</property>
   <property name="ViewCaptionHeight">-1</property>
-  <property name="Columns" iskey="true" value="13">
+  <property name="Columns" iskey="true" value="14">
     <property name="Item1" isnull="true" iskey="true">
       <property name="Name">colHash</property>
       <property name="VisibleIndex">2</property>
@@ -154,6 +154,14 @@
       <property name="VisibleIndex">1</property>
       <property name="Visible">true</property>
       <property name="Width">55</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Name">colSourceFile</property>
+      <property name="VisibleIndex">13</property>
+      <property name="Visible">true</property>
+      <property name="Width">279</property>
       <property name="MinWidth">20</property>
       <property name="MaxWidth">0</property>
     </property>

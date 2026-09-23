@@ -8,6 +8,10 @@ Special thanks to those who have contributed to this Batch file:
 * [Tony Knutson](https://twitter.com/bigt252002)
 * Chris Kudless
 * [Reece394](https://github.com/reece394)
+* [esecrpm](https://github.com/esecrpm)
+* [ogmini](https://github.com/ogmini)
+* [Evangelos Dragonas (@theAtropos4n6)](https://github.com/theAtropos4n6)
+* [CERT CWATCH](https://github.com/cert-cwatch/)
 
 # Version History
 
@@ -56,6 +60,19 @@ Example entry, please follow this format:
 | 2.07 | 2024-11-26 | Added new artifacts from the DEFAULT registry hive  |
 | 2.08 | 2024-12-07 | Added WinSCP DEFAULT artifact back and added Advanced IP Scanner and Advanced Port Scanner Artifacts |
 | 2.09 | 2024-12-19 | Added Angry IP Scanner Artifacts |
+| 2.10 | 2025-01-18 | Added System ProductType and ProductSuite Artifacts |
+| 2.11 | 2025-03-31 | Added Threat Hunt for WinLogon Shell and Userinit values |
+| 2.12 | 2025-07-01 | Added MobaXTerm artifacts [Third Party Applications] |
+| 2.13 | 2025-07-01 | Added User Account Control Artifacts |
+| 2.14 | 2025-07-05 | Added System Info, Processor Info, Recent File List and Registry Editor Usage Artifacts |
+| 2.15 | 2025-07-12 | Added Initial User.dat Windows Store UWP and WinSCP Windows Store Artifacts |
+| 2.16 | 2025-07-18 | Added More User.dat Windows Store UWP Artifacts - Network Share and WordPad |
+| 2.17 | 2025-07-20 | Added ApplicationAssociationToasts and More Office MRU Artifacts |
+| 2.18 | 2025-09-01 | Added ConsentStore Artifacts |
+| 2.19 | 2025-09-02 | Added Desktop IconLayouts, DB Browser for SQLite and WinMerge Artifacts |
+| 2.20 | 2025-10-03 | Added PuTTY, CCleaner, File Shredder, Splashtop Artifacts |
+| 2.21 | 2026-01-06 | Added WOW6432Node Run Keys and Expanded Edge and Chrome Artifacts |
+| 2.22 | 2026-03-17 | Added WDigest status artifcats. Also fix some Third Party Applications missing path |
 
 # Documentation
 
@@ -74,6 +91,5 @@ As of May 2024, the following plugins are not being leveraged:
 
 * [DHCPNetworkHint](https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.DHCPNetworkHint)
 * [FeatureUsage](https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.FeatureUsage)
-* [IconLayouts](https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.IconLayouts)
 * [NetworkSettings](https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.NetworkSettings)
 * [TaskFlowShellActivities](https://github.com/EricZimmerman/RegistryPlugins/blob/master/RegistryPlugin.TaskFlowShellActivities/TaskFlowShellActivities.cs)

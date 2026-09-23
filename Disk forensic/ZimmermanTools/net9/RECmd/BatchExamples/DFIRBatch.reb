@@ -1,7 +1,7 @@
 Description: DFIR RECmd Batch File
 Author: Andrew Rathbun
-Version: 2.09
-Id: 2e1589f5-e31a-4bef-822f-075d56afdddd
+Version: 2.22
+Id: 77ae78db-4fe9-4383-9aea-ddd9ebec35cc
 Keys:
 #
 # DFIRBatch README: https://github.com/EricZimmerman/RECmd/blob/master/BatchExamples/DFIRBatch.md
@@ -517,6 +517,87 @@ Keys:
         ValueName: BuildLab
         Recursive: false
         Comment: "Current OS build information"
+    -
+        Description: System Info (Current)
+        HiveType: SOFTWARE
+        Category: System Info
+        KeyPath: Microsoft\Windows NT\CurrentVersion
+        ValueName: BuildLabEx
+        Recursive: false
+        Comment: "Current OS extended build information"
+    -
+        Description: System Info (Current)
+        HiveType: SOFTWARE
+        Category: System Info
+        KeyPath: Microsoft\Windows NT\CurrentVersion
+        ValueName: ReleaseID
+        Recursive: false
+        Comment: "Current OS Release ID - Deprecated in Windows 10 21H1 and Newer (Shows 2009)"
+    -
+        Description: System Info (Current)
+        HiveType: SOFTWARE
+        Category: System Info
+        KeyPath: Microsoft\Windows NT\CurrentVersion
+        ValueName: CSDVersion
+        Recursive: false
+        Comment: "Current OS Service Pack Number"
+    -
+        Description: System Info (Current)
+        HiveType: SOFTWARE
+        Category: System Info
+        KeyPath: Microsoft\Windows NT\CurrentVersion
+        ValueName: UBR
+        Recursive: false
+        Comment: "Current OS Update Build Revision Number"
+    -
+        Description: System Info (Current)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: CurrentControlSet\Control\ProductOptions
+        ValueName: ProductType
+        Recursive: false
+        Comment: "Indicates Type of System - WinNT = Workstation, LanmanNT = Domain Controller (DC - Primary or Backup), ServerNT = Server"
+
+# https://community.tenable.com/s/article/Finding-the-Correct-Audit-File-for-Windows-Member-Servers-and-Domain-Controllers?language=en_US
+# https://support.microsoft.com/?kbid=152078
+# https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/152078
+
+    -
+        Description: System Info (Current)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: ControlSet00*\Control\ProductOptions
+        ValueName: ProductType
+        Recursive: false
+        Comment: "Indicates Type of System - WinNT = Workstation, LanmanNT = Domain Controller (DC - Primary or Backup), ServerNT = Server"
+
+# https://community.tenable.com/s/article/Finding-the-Correct-Audit-File-for-Windows-Member-Servers-and-Domain-Controllers?language=en_US
+# https://support.microsoft.com/?kbid=152078
+# https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/152078
+
+    -
+        Description: System Info (Current)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: CurrentControlSet\Control\ProductOptions
+        ValueName: ProductSuite
+        Recursive: false
+        Comment: "Indicates Product Licence on System"
+
+# https://support.microsoft.com/?kbid=152078
+# https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/152078
+
+    -
+        Description: System Info (Current)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: ControlSet00*\Control\ProductOptions
+        ValueName: ProductSuite
+        Recursive: false
+        Comment: "Indicates Product Licence on System"
+
+# https://support.microsoft.com/?kbid=152078
+# https://www.betaarchive.com/wiki/index.php/Microsoft_KB_Archive/152078
 
 # System Info -> System Info (Historical)
 
@@ -636,6 +717,38 @@ Keys:
         ValueName: BuildLab
         Recursive: false
         Comment: "Historical OS build information"
+    -
+        Description: System Info (Historical)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: Setup\Source OS*
+        ValueName: BuildLabEx
+        Recursive: false
+        Comment: "Historical OS extended build information"
+    -
+        Description: System Info (Historical)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: Setup\Source OS*
+        ValueName: ReleaseID
+        Recursive: false
+        Comment: "Historical OS Release ID - Deprecated in Windows 10 21H1 and Newer (Shows 2009)"
+    -
+        Description: System Info (Historical)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: Setup\Source OS*
+        ValueName: CSDVersion
+        Recursive: false
+        Comment: "Historical OS Service Pack Number"
+    -
+        Description: System Info (Historical)
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: Setup\Source OS*
+        ValueName: UBR
+        Recursive: false
+        Comment: "Historical OS Update Build Revision Number"
 
 # https://az4n6.blogspot.com/2017/02/when-windows-lies.html
 # https://www.nextofwindows.com/when-was-my-windows-10-originally-installed
@@ -1293,6 +1406,75 @@ Keys:
 # NetworkSetup2 plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.NetworkSetup2
 # https://thinkdfir.com/2019/10/05/hunting-for-mac-addresses
 
+# System Info - Processor Information
+
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: CurrentControlSet\Control\Session Manager\Environment
+        ValueName: PROCESSOR_ARCHITECTURE
+        Recursive: False
+        Comment: "Displays Processor Architecture of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: ControlSet*\Control\Session Manager\Environment
+        ValueName: PROCESSOR_ARCHITECTURE
+        Recursive: False
+        Comment: "Displays Processor Architecture of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: CurrentControlSet\Control\Session Manager\Environment
+        ValueName: PROCESSOR_IDENTIFIER
+        Recursive: False
+        Comment: "Displays Processor Identifier of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: ControlSet*\Control\Session Manager\Environment
+        ValueName: PROCESSOR_IDENTIFIER
+        Recursive: False
+        Comment: "Displays Processor Identifier of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: CurrentControlSet\Control\Session Manager\Environment
+        ValueName: PROCESSOR_LEVEL
+        Recursive: False
+        Comment: "Displays Processor Level of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: ControlSet*\Control\Session Manager\Environment
+        ValueName: PROCESSOR_LEVEL
+        Recursive: False
+        Comment: "Displays Processor Level of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: CurrentControlSet\Control\Session Manager\Environment
+        ValueName: PROCESSOR_REVISION
+        Recursive: False
+        Comment: "Displays Processor Revision of this system"
+    -
+        Description: Processor Information
+        HiveType: SYSTEM
+        Category: System Info
+        KeyPath: ControlSet*\Control\Session Manager\Environment
+        ValueName: PROCESSOR_REVISION
+        Recursive: False
+        Comment: "Displays Processor Revision of this system"
+
+# https://learn.microsoft.com/en-us/troubleshoot/windows-server/setup-upgrade-and-drivers/determine-the-type-of-processor
+
 # --------------------
 # DEVICES
 # --------------------
@@ -1392,6 +1574,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
         Recursive: true
         Comment: "Mount Points - NTUSER"
+    -
+        Description: MountPoints2
+        HiveType: User
+        Category: Devices
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2
+        Recursive: true
+        Comment: "Mount Points - User.dat Windows Store UWP"
 
 # https://www.sans.org/security-resources/posters/windows-forensic-analysis/170/download
 # https://eforensicsmag.com/investigating-usb-drives-using-mount-points-not-drive-letters-by-ali-hadi/
@@ -1459,6 +1648,14 @@ Keys:
         Comment: "Displays the UNC path for a mounted network share"
     -
         Description: Network Shares
+        HiveType: User
+        Category: Network Shares
+        KeyPath: Network
+        ValueName: RemotePath
+        Recursive: true
+        Comment: "Displays the UNC path for a mounted network share - Windows Store UWP"
+    -
+        Description: Network Shares
         HiveType: NTUSER
         Category: Network Shares
         KeyPath: Network
@@ -1467,12 +1664,28 @@ Keys:
         Comment: "Displays the user account associated with the mounted network share"
     -
         Description: Network Shares
+        HiveType: User
+        Category: Network Shares
+        KeyPath: Network
+        ValueName: UserName
+        Recursive: true
+        Comment: "Displays the user account associated with the mounted network share - Windows Store UWP"
+    -
+        Description: Network Shares
         HiveType: NTUSER
         Category: Network Shares
         KeyPath: Network
         ValueName: ProviderName
         Recursive: true
         Comment: "Displays the provider of the mounted network share"
+    -
+        Description: Network Shares
+        HiveType: User
+        Category: Network Shares
+        KeyPath: Network
+        ValueName: ProviderName
+        Recursive: true
+        Comment: "Displays the provider of the mounted network share - Windows Store UWP"
 
 # https://social.technet.microsoft.com/Forums/ie/en-US/65eb8a2f-988f-40a7-b6ff-616a050c8efc/list-all-mapped-drives-for-all-users-that-have-logged-into-a-computer?forum=ITCG
 
@@ -1483,6 +1696,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU
         Recursive: false
         Comment: "Displays drives that were mapped by the user"
+    -
+        Description: Network Drive MRU
+        HiveType: User
+        Category: Network Shares
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive MRU
+        Recursive: false
+        Comment: "Displays drives that were mapped by the user - Windows Store UWP"
 
 # https://community.spiceworks.com/topic/137045-remove-previously-mapped-network-drive-paths
 # https://answers.microsoft.com/en-us/windows/forum/windows_7-networking/cleanup-network-drives-list/1247aca3-deb6-493d-b937-24b40087cbc7?auth=1
@@ -1656,6 +1876,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\CIDSizeMRU
         Recursive: false
         Comment: "Recently ran applications, lower MRU # (Value Data3) = more recent"
+    -
+        Description: CIDSizeMRU
+        HiveType: User
+        Category: Program Execution
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\CIDSizeMRU
+        Recursive: false
+        Comment: "Recently ran applications, lower MRU # (Value Data3) = more recent - Windows Store UWP"
 
 # CIDSizeMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.CIDSizeMRU
 # https://windowsir.blogspot.com/2013/07/howto-determine-user-access-to-files.html
@@ -1705,6 +1932,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count
         Recursive: false
         Comment: "GUI-based programs launched from the desktop"
+    -
+        Description: UserAssist
+        HiveType: User
+        Category: Program Execution
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\*\Count
+        Recursive: false
+        Comment: "GUI-based programs launched from the desktop - Windows Store UWP"
 
 # UserAssist plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.UserAssist
 # https://www.sans.org/security-resources/posters/windows-forensic-analysis/170/download
@@ -1798,6 +2032,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths
         Recursive: false
         Comment: "Displays paths that were typed by the user in Windows Explorer"
+    -
+        Description: TypedPaths
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths
+        Recursive: false
+        Comment: "Displays paths that were typed by the user in Windows Explorer - Windows Store UWP"
 
 # https://www.hecfblog.com/2018/09/daily-blog-483-typed-paths-amnesia.html
 # http://windowsir.blogspot.com/2013/07/howto-determine-user-access-to-files.html
@@ -1824,6 +2065,27 @@ Keys:
         KeyPath: SOFTWARE\Microsoft\Office\*\*\User MRU\*\File MRU
         Recursive: false
         Comment: "Microsoft Office Recent Files, lower Item value (Value Name) = more recent"
+    -
+        Description: Microsoft Office MRU
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: SOFTWARE\Microsoft\Office\*\*\File MRU
+        Recursive: false
+        Comment: "Microsoft Office Recent Files, lower Item value (Value Name) = more recent"
+    -
+        Description: Microsoft Office MRU
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: SOFTWARE\Microsoft\Office\*\*\User MRU\*\Place MRU
+        Recursive: false
+        Comment: "Microsoft Office Recent Places"
+    -
+        Description: Microsoft Office MRU
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: SOFTWARE\Microsoft\Office\*\*\Place MRU
+        Recursive: false
+        Comment: "Microsoft Office Recent Places"
 
 # OfficeMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.OfficeMRU
 # https://www.eshlomo.us/windows-forensics-analysis-evidence/
@@ -1838,6 +2100,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
         Recursive: true
         Comment: "User Searches"
+    -
+        Description: WordWheelQuery
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery
+        Recursive: true
+        Comment: "User Searches - Windows Store UWP"
 
 # https://www.sans.org/security-resources/posters/windows-forensic-analysis/170/download
 # https://tzworks.net/prototype_page.php?proto_id=19
@@ -1862,6 +2131,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU
         Recursive: false
         Comment: "Tracks files that have been opened or saved within a Windows shell dialog box"
+    -
+        Description: OpenSavePidlMRU
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\OpenSavePidlMRU
+        Recursive: false
+        Comment: "Tracks files that have been opened or saved within a Windows shell dialog box - Windows Store UWP"
 
 # OpenSavePidlMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.OpenSavePidlMRU
 # https://www.sans.org/blog/opensavemru-and-lastvisitedmru/
@@ -1883,6 +2159,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
         Recursive: false
         Comment: "Tracks the specific executable used by an application to open the files documented in OpenSavePidlMRU"
+    -
+        Description: LastVisitedPidlMRU
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisitedPidlMRU
+        Recursive: false
+        Comment: "Tracks the specific executable used by an application to open the files documented in OpenSavePidlMRU - Windows Store UWP"
 
 # LastVisitedPidlMRU plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.LastVisitedPidlMRU
 # https://www.sans.org/blog/opensavemru-and-lastvisitedmru
@@ -1913,6 +2196,13 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
         Recursive: true
         Comment: "Files recently opened from Windows Explorer"
+    -
+        Description: RecentDocs
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
+        Recursive: true
+        Comment: "Files recently opened from Windows Explorer - Windows Store UWP"
 
 # RecentDocs plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.RecentDocs
 # https://forensic4cast.com/2019/03/the-recentdocs-key-in-windows-10/
@@ -1928,8 +2218,64 @@ Keys:
         KeyPath: Software\*\*\Recent File List
         Recursive: false
         Comment: "Displays recent files accessed by the user with an application"
+    -
+        Description: Recent File List
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Paint\Recent File List
+        Recursive: false
+        Comment: "Displays recent files accessed by the user with MS Paint"
 
-# https://www.forensafe.com/blogs/paintmru.html
+# https://forensafe.com/blogs/PaintMRU.html
+
+    -
+        Description: Recent File List
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Paint\Recent File List
+        Recursive: false
+        Comment: "Displays recent files accessed by the user with MS Paint Windows Store Version"
+
+# https://forensafe.com/blogs/PaintMRU.html
+# https://ogmini.github.io/2025/06/14/Microsoft-Paint-Application-Hive.html
+
+    -
+        Description: Recent File List
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Wordpad\Recent File List
+        Recursive: false
+        Comment: "Displays recent files accessed by the user with MS WordPad"
+    -
+        Description: Recent File List
+        HiveType: User
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Wordpad\Recent File List
+        Recursive: false
+        Comment: "Displays recent files accessed by the user with MS WordPad Windows Store Version"
+
+# https://forensafe.com/blogs/wordpad_recent_files.html
+
+    -
+        Description: Registry Editor Usage
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Regedit
+        ValueName: LastKey
+        Recursive: false
+        Comment: "Displays the last registry key accessed by the user in RegEdit"
+
+# https://forensafe.com/blogs/lastkey.html
+
+    -
+        Description: Registry Editor Usage
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\Favorites
+        Recursive: false
+        Comment: "Displays favourite registry keys saved by the user in RegEdit"
+
+# https://www.tenforums.com/tutorials/6961-add-remove-registry-favorites-windows.html
 
     -
         Description: Recent Folder List
@@ -1957,13 +2303,6 @@ Keys:
         HiveType: NTUSER
         Category: User Activity
         KeyPath: Software\Microsoft\*\*\RecentFind
-        Recursive: false
-        Comment: ""
-    -
-        Description: Recent File List
-        HiveType: NTUSER
-        Category: User Activity
-        KeyPath: Software\Microsoft\*\Recent File List
         Recursive: false
         Comment: ""
     -
@@ -2125,6 +2464,126 @@ Keys:
 # https://www.cyberfox.blog/tag/rdp-mru/
 # https://ir3e.com/chapter-14-other-applications/
 
+# User Activity -> ConsentStore (Global)
+
+    -
+        Description: ConsentStore (Global)
+        HiveType: SOFTWARE
+        Category: User Activity
+        KeyPath: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*
+        ValueName: Value
+        Recursive: true
+        Comment: "Displays Permissions Set For Applications to Access. Allow, Deny and Prompt"
+    -
+        Description: ConsentStore (Global)
+        HiveType: SOFTWARE
+        Category: User Activity
+        KeyPath: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\*
+        ValueName: LastUsedTimeStart
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays timestamp of when a permission started being used with a given application"
+    -
+        Description: ConsentStore (Global)
+        HiveType: SOFTWARE
+        Category: User Activity
+        KeyPath: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\NonPackaged\*
+        ValueName: LastUsedTimeStart
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays timestamp of when a permission started being used with a given application"
+    -
+        Description: ConsentStore (Global)
+        HiveType: SOFTWARE
+        Category: User Activity
+        KeyPath: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\*
+        ValueName: LastUsedTimeStop
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays the timestamp of when a permission stopped being used with a given application"
+    -
+        Description: ConsentStore (Global)
+        HiveType: SOFTWARE
+        Category: User Activity
+        KeyPath: Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\NonPackaged\*
+        ValueName: LastUsedTimeStop
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays the timestamp of when a permission stopped being used with a given application"
+
+# https://www.cyberengage.org/post/registry-system-configiuration-tracking-microphone-and-camera-usage-in-windows-program-execution
+
+# User Activity -> ConsentStore (User)
+
+    -
+        Description: ConsentStore (User)
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*
+        ValueName: Value
+        Recursive: true
+        Comment: "Displays Permissions Set For Applications to Access. Allow, Deny and Prompt"
+    -
+        Description: ConsentStore (User)
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\*
+        ValueName: LastUsedTimeStart
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays timestamp of when a permission started being used with a given application"
+    -
+        Description: ConsentStore (User)
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\NonPackaged\*
+        ValueName: LastUsedTimeStart
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays timestamp of when a permission started being used with a given application"
+    -
+        Description: ConsentStore (User)
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\*
+        ValueName: LastUsedTimeStop
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays the timestamp of when a permission stopped being used with a given application"
+    -
+        Description: ConsentStore (User)
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\*\NonPackaged\*
+        ValueName: LastUsedTimeStop
+        IncludeBinary: true
+        BinaryConvert: FILETIME
+        Recursive: false
+        Comment: "Displays the timestamp of when a permission stopped being used with a given application"
+
+# https://www.cyberengage.org/post/registry-system-configiuration-tracking-microphone-and-camera-usage-in-windows-program-execution
+
+# User Activity -> Desktop IconLayouts
+
+    -
+        Description: Desktop IconLayouts
+        HiveType: NTUSER
+        Category: User Activity
+        KeyPath: Software\Microsoft\Windows\Shell\Bags\1\Desktop
+        Recursive: false
+        Comment: "Displays the desktop icon layout, Observed in Windows 11 to be arranged from top to bottom in columns from the top left of the screen."
+
+# IconLayouts plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.IconLayouts
+# In Windows 11 icons appear from the top left of the screen, filling downwards, then moving to the next column going from left to right.
+# https://github.com/kacos2000/Win10/blob/master/Desktop_IconLayouts.pdf
+
 # --------------------
 # AUTORUNS
 # --------------------
@@ -2174,6 +2633,26 @@ Keys:
         HiveType: SOFTWARE
         Category: Autoruns
         KeyPath: Microsoft\Windows\CurrentVersion\RunOnce
+        Recursive: false
+        Comment: "Program execution upon successful user logon"
+
+# https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys
+
+    -
+        Description: Run (SYSTEM)
+        HiveType: SOFTWARE
+        Category: Autoruns
+        KeyPath: WOW6432Node\Microsoft\Windows\CurrentVersion\Run
+        Recursive: false
+        Comment: "Program execution upon successful user logon"
+
+# https://docs.microsoft.com/en-us/windows/win32/setupapi/run-and-runonce-registry-keys
+
+    -
+        Description: RunOnce (SYSTEM)
+        HiveType: SOFTWARE
+        Category: Autoruns
+        KeyPath: WOW6432Node\Microsoft\Windows\CurrentVersion\RunOnce
         Recursive: false
         Comment: "Program execution upon successful user logon"
 
@@ -2264,6 +2743,26 @@ Keys:
 # Do not include anything in NTUSER or SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall as that is covered already by Installed Software entries
 # Sometimes, there are values for third party applications not covered under the standard DisplayVersion, Publisher, InstallLocation, InstallDate, and DisplayName entries. I've seen Inno Setup: User, Inno Setup: Language, and Inno Setup: App Path
 # For this section, please include a subheader and a URL, even if its only one entry per program
+
+# Third Party Applications -> MobaXterm
+
+    -
+        Description: MobaXTerm Sessions
+        HiveType: NTUSER
+        Category: Third-Party Applications
+        KeyPath: SOFTWARE\MobaXterm
+        Recursive: true
+        Comment: "Collects all MobaXTerm session artifacts"
+
+    -
+        Description: MobaXTerm
+        HiveType: NTUSER
+        Category: Third-Party Applications
+        KeyPath: SOFTWARE\Mobatek
+        Recursive: true
+        Comment: "Collects all MobaXTerm/MobaTek administrative artifacts"
+
+# https://mobaxterm.mobatek.net/
 
 # Third Party Applications -> Citrix
 
@@ -2624,6 +3123,13 @@ Keys:
         KeyPath: Software\Martin Prikryl
         Recursive: true
         Comment: "WinSCP"
+    -
+        Description: WinSCP
+        HiveType: User
+        Category: Third Party Applications
+        KeyPath: Software\Martin Prikryl
+        Recursive: true
+        Comment: "WinSCP Windows Store Version"
 
 # Third Party Applications -> Ares - https://www.ares.net/
 
@@ -2755,6 +3261,14 @@ Keys:
         Recursive: true
         Comment: "Displays artifacts relating to AnyDesk"
 
+    -
+        Description: AnyDesk
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\AnyDesk
+        Recursive: true
+        Comment: "Displays artifacts relating to AnyDesk"
+
 # https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_1_1_yamashige-nakatani-tanaka_en.pdf
 
 # Third Party Applications -> Atera - https://www.atera.com
@@ -2764,6 +3278,14 @@ Keys:
         HiveType: SYSTEM
         Category: Third Party Applications
         KeyPath: CurrentControlSet\Services\AteraAgent
+        Recursive: true
+        Comment: "Displays artifacts relating to Atera"
+
+    -
+        Description: Atera
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\AteraAgent
         Recursive: true
         Comment: "Displays artifacts relating to Atera"
 
@@ -2780,6 +3302,15 @@ Keys:
         Recursive: false
         Comment: "Displays artifacts relating to ConnectWise (ScreenConnect)"
 
+    -
+        Description: ConnectWise (ScreenConnect)
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\ScreenConnect Client*
+        ValueName: DisplayName
+        Recursive: false
+        Comment: "Displays artifacts relating to ConnectWise (ScreenConnect)"
+
 # https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_1_1_yamashige-nakatani-tanaka_en.pdf
 
 # Third Party Applications -> LogMeIn - https://www.logmein.com
@@ -2792,6 +3323,14 @@ Keys:
         Recursive: true
         Comment: "Displays artifacts relating to LogMeIn"
 
+    -
+        Description: LogMeIn
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\LogMeIn
+        Recursive: true
+        Comment: "Displays artifacts relating to LogMeIn"
+
 # https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_1_1_yamashige-nakatani-tanaka_en.pdf
 
 # Third Party Applications -> RemoteUtilities - https://www.remoteutilities.com/
@@ -2801,6 +3340,13 @@ Keys:
         HiveType: SYSTEM
         Category: Third Party Applications
         KeyPath: CurrentControlSet\Services\RManService
+        Recursive: true
+        Comment: "Displays artifacts relating to RemoteUtilities"
+    -
+        Description: RemoteUtilities
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\RManService
         Recursive: true
         Comment: "Displays artifacts relating to RemoteUtilities"
     -
@@ -2858,11 +3404,47 @@ Keys:
         Description: Splashtop
         HiveType: SYSTEM
         Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\SplashtopRemoteService
+        Recursive: true
+        Comment: "Displays artifacts relating to Splashtop"
+    -
+        Description: Splashtop
+        HiveType: SYSTEM
+        Category: Third Party Applications
         KeyPath: CurrentControlSet\Services\SSUService
+        Recursive: true
+        Comment: "Displays artifacts relating to Splashtop"
+    -
+        Description: Splashtop
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\SSUService
+        Recursive: true
+        Comment: "Displays artifacts relating to Splashtop"
+    -
+        Description: Splashtop
+        HiveType: NTUSER
+        Category: Third Party Applications
+        KeyPath: Software\Splashtop Inc.
+        Recursive: true
+        Comment: "Displays artifacts relating to Splashtop"
+    -
+        Description: Splashtop
+        HiveType: SOFTWARE
+        Category: Third Party Applications
+        KeyPath: WOW6432Node\Splashtop Inc.
+        Recursive: true
+        Comment: "Displays artifacts relating to Splashtop"
+    -
+        Description: Splashtop
+        HiveType: SOFTWARE
+        Category: Third Party Applications
+        KeyPath: WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Splashtop Software Updater
         Recursive: true
         Comment: "Displays artifacts relating to Splashtop"
 
 # https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_1_1_yamashige-nakatani-tanaka_en.pdf
+# https://www.synacktiv.com/publications/legitimate-rats-a-comprehensive-forensic-analysis-of-the-usual-suspects
 
 # Third Party Applications -> TeamViewer - https://www.teamviewer.com/en-us/
 
@@ -2873,6 +3455,14 @@ Keys:
         KeyPath: CurrentControlSet\Services\TeamViewer
         Recursive: true
         Comment: "Displays artifacts relating to TeamViewer"
+    -
+        Description: TeamViewer
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\TeamViewer
+        Recursive: true
+        Comment: "Displays artifacts relating to TeamViewer"
+
 # https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_1_1_yamashige-nakatani-tanaka_en.pdf
 
 # Third Party Applications -> TightVNC - https://www.tightvnc.com/
@@ -2891,7 +3481,52 @@ Keys:
         KeyPath: Software\TightVNC\Server
         Recursive: true
         Comment: "Displays artifacts relating to TightVNC"
+    -
+        Description: TightVNC
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\tvnserver
+        Recursive: true
+        Comment: "Displays artifacts relating to TightVNC"
+
 # https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_1_1_yamashige-nakatani-tanaka_en.pdf
+
+# Third Party Applications -> PuTTY - https://www.chiark.greenend.org.uk/~sgtatham/putty/
+
+    -
+        Description: PuTTY
+        HiveType: NTUSER
+        Category: Third Party Applications
+        KeyPath: Software\SimonTatham\PuTTY
+        Recursive: true
+        Comment: "Displays artifacts relating to PuTTY"
+
+# https://docs.velociraptor.app/artifact_references/pages/windows.registry.puttyhostkeys/
+
+# Third Party Applications -> CCleaner - https://www.ccleaner.com/
+
+    -
+        Description: CCleaner
+        HiveType: NTUSER
+        Category: Third Party Applications
+        KeyPath: Software\Piriform\CCleaner
+        Recursive: true
+        Comment: "Displays artifacts relating to CCleaner"
+
+# https://www.synacktiv.com/publications/ccleaner-forensics
+# https://www.magnetforensics.com/resources/oh-no-the-suspect-ran-ccleaner-to-get-rid-of-the-evidence/
+
+# Third Party Applications -> File Shredder - fileshredder.org
+
+    -
+        Description: File Shredder
+        HiveType: NTUSER
+        Category: Third Party Applications
+        KeyPath: Software\Shredder
+        Recursive: true
+        Comment: "Displays artifacts relating to File Shredder"
+
+# N/A
 
 # Third Party Applications -> FileZilla - https://filezilla-project.org/
 
@@ -2924,6 +3559,13 @@ Keys:
         HiveType: SYSTEM
         Category: Third Party Applications
         KeyPath: CurrentControlSet\Services\GsServer
+        Recursive: true
+        Comment: "Displays artifacts relating to GoodSync"
+    -
+        Description: GoodSync
+        HiveType: SYSTEM
+        Category: Third Party Applications
+        KeyPath: ControlSet00*\Services\GsServer
         Recursive: true
         Comment: "Displays artifacts relating to GoodSync"
 
@@ -2998,6 +3640,26 @@ Keys:
         KeyPath: Software\JavaSoft\Prefs\ipscan
         Recursive: true
         Comment: "Displays artifacts relating to Angry IP Scanner"
+
+# Third Party Applications -> DB Browser for SQLite - https://sqlitebrowser.org/
+
+    -
+        Description: DB Browser for SQLite
+        HiveType: NTUSER
+        Category: Third Party Applications
+        KeyPath: Software\sqlitebrowser\sqlitebrowser
+        Recursive: true
+        Comment: "Displays artifacts relating to DB Browser for SQLite"
+
+# Third Party Applications -> WinMerge - https://winmerge.org/
+
+    -
+        Description: WinMerge
+        HiveType: NTUSER
+        Category: Third Party Applications
+        KeyPath: Software\Thingamahoochie\WinMerge
+        Recursive: true
+        Comment: "Displays artifacts relating to WinMerge"
 
 # --------------------
 # CLOUD STORAGE
@@ -3294,7 +3956,7 @@ Keys:
         Description: Google Chrome
         HiveType: NTUSER
         Category: Web Browsers
-        KeyPath: Software\Google\Chrome
+        KeyPath: Software\Google\Chrome*
         Recursive: true
         Comment: "Google Chrome Registry artifacts"
     -
@@ -3361,7 +4023,7 @@ Keys:
         Description: Microsoft Edge
         HiveType: NTUSER
         Category: Web Browsers
-        KeyPath: Software\Microsoft\Edge
+        KeyPath: Software\Microsoft\Edge*
         Recursive: true
         Comment: "Microsoft Edge Registry artifacts"
     -
@@ -3394,10 +4056,32 @@ Keys:
         KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts
         Recursive: false
         Comment: "Tracks programs associated with file extensions"
+    -
+        Description: File Extensions
+        HiveType: User
+        Category: Installed Software
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts
+        Recursive: false
+        Comment: "Tracks programs associated with file extensions - Windows Store UWP"
 
 # FileExts plugin - https://github.com/EricZimmerman/RegistryPlugins/tree/master/RegistryPlugin.FileExts
 # https://www.marshall.edu/forensics/files/Brewer-PosterFinal.pdf
 # https://digital-forensics.sans.org/summit-archives/2012/taking-registry-analysis-to-the-next-level.pdf
+
+    -
+        Description: ApplicationAssociationToasts
+        HiveType: NTUSER
+        Category: Installed Software
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts
+        Recursive: false
+        Comment: "Tracks programs associated with file extensions - Linked to Open With Dialog"
+    -
+        Description: ApplicationAssociationToasts
+        HiveType: User
+        Category: Installed Software
+        KeyPath: Software\Microsoft\Windows\CurrentVersion\ApplicationAssociationToasts
+        Recursive: false
+        Comment: "Tracks programs associated with file extensions - Linked to Open With Dialog - Windows Store UWP"
 
 # Installed Software -> Add/Remove Program Entries
     -
@@ -3511,6 +4195,78 @@ Keys:
 # --------------------
 # THREAT HUNTING
 # --------------------
+
+    -
+        Description: WinLogon Shell
+        HiveType: NTUSER
+        Category: Threat Hunting
+        KeyPath: SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon
+        ValueName: Shell
+        Recursive: false
+        Comment: "Contains the default shell environment for Windows, normally 'explorer.exe'"
+
+# https://attack.mitre.org/techniques/T1547/004
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.004/T1547.004.md
+
+    -
+        Description: WinLogon Shell
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows NT\CurrentVersion\WinLogon
+        ValueName: Shell
+        Recursive: false
+        Comment: "Contains the default shell environment for Windows, normally 'explorer.exe'"
+
+# https://attack.mitre.org/techniques/T1547/004
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.004/T1547.004.md
+
+    -
+        Description: WinLogon Shell
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: WOW6432Node\Microsoft\Windows NT\CurrentVersion\WinLogon
+        ValueName: Shell
+        Recursive: false
+        Comment: "Contains the default shell environment for Windows, normally 'explorer.exe'"
+
+# https://attack.mitre.org/techniques/T1547/004
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.004/T1547.004.md
+
+    -
+        Description: WinLogon UserInit
+        HiveType: NTUSER
+        Category: Threat Hunting
+        KeyPath: SOFTWARE\Microsoft\Windows NT\CurrentVersion\WinLogon
+        ValueName: Userinit
+        Recursive: false
+        Comment: "Userinit.exe is launched by winlogon.exe and runs logon scripts for the user, reestablishes network connections, and then starts Explorer.exe. It also specifies programs Winlogon should run when a user logs on. Typically contains 'userinit.exe,'."
+
+# https://attack.mitre.org/techniques/T1547/004
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.004/T1547.004.md
+
+    -
+        Description: WinLogon UserInit
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows NT\CurrentVersion\WinLogon
+        ValueName: Userinit
+        Recursive: false
+        Comment: "Userinit.exe is launched by winlogon.exe and runs logon scripts for the user, reestablishes network connections, and then starts Explorer.exe. It also specifies programs Winlogon should run when a user logs on. Typically contains 'userinit.exe,'."
+
+# https://attack.mitre.org/techniques/T1547/004
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.004/T1547.004.md
+
+    -
+        Description: WinLogon UserInit
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: WOW6432Node\Microsoft\Windows NT\CurrentVersion\WinLogon
+        ValueName: Userinit
+        Recursive: false
+        Comment: "Userinit.exe is launched by winlogon.exe and runs logon scripts for the user, reestablishes network connections, and then starts Explorer.exe. It also specifies programs Winlogon should run when a user logs on. Typically contains 'userinit.exe,'."
+
+# https://attack.mitre.org/techniques/T1547/004
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1547.004/T1547.004.md
 
     -
         Description: Shadow RDP Sessions
@@ -4268,5 +5024,143 @@ Keys:
 
 # https://twitter.com/RoxpinTeddy/status/1531726171292983297?t=yan4rRk3w1epMk2Vxncfxw&s=19
 # https://businessinsights.bitdefender.com/technical-advisory-cve-2022-30190-zero-day-vulnerability-follina-in-microsoft-support-diagnostic-tool
+
+# Threat Hunting -> User Account Control (UAC)
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: EnableLUA
+        Recursive: false
+        Comment: "Run all administrators in Admin Approval Mode - Disables UAC, 0 = Disabled (UAC Off), 1 = Enabled (UAC On)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/958053ae-5397-4f96-977f-b7700ee461ec
+# https://learn.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/microsoft-windows-lua-settings-enablelua
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1548.002/T1548.002.md#atomic-test-8---disable-uac-using-regexe
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: ConsentPromptBehaviorAdmin
+        Recursive: false
+        Comment: "Behavior of the elevation prompt for administrators in Admin Approval Mode - Disables UAC, 0 = Disabled (UAC Off), 1 = Prompt for credentials (Secure Desktop), 2 = Prompt for Consent Yes No (Secure Desktop), 3 = Prompt for credentials (Secure Desktop Off), 4 = Prompt for Consent Yes No (Secure Desktop Off), 5 = Prompt for Non-Windows Binaries (Default)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/341747f5-6b5d-4d30-85fc-fa1cc04038d4
+# https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1548.002/T1548.002.md#atomic-test-22---disable-uac-admin-consent-prompt-via-consentpromptbehavioradmin-registry-key
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: ConsentPromptBehaviorUser
+        Recursive: false
+        Comment: "Behavior of the elevation prompt for standard users, 0 = Deny Elevation Requests, 1 = Prompt for credentials (Secure Desktop - Default), 3 = Prompt for credentials (Secure Desktop Off)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/15f4f7b3-d966-4ff4-8393-cb22ea1c3a63
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: FilterAdministratorToken
+        Recursive: false
+        Comment: "Use Admin Approval Mode for the built-in Administrator account, 0 = Disabled (UAC Off - Default), 1 = Enabled (UAC On)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/7c705718-f58e-4886-8057-37c8fd9aede1
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: EnableUIADesktopToggle
+        Recursive: false
+        Comment: "Allow UIAccess applications to prompt for elevation without using the secure desktop, 0 = Disabled (Secure Desktop On - Default), 1 = Enabled (Secure Desktop Off)"
+
+# https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration?tabs=intune
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: EnableInstallerDetection
+        Recursive: false
+        Comment: "Detect application installations and prompt for elevation, 0 = Disabled (No Prompt), 1 = Enabled (Prompt)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/c2b4efc5-2fe8-4dc9-95f7-2417b3d4cc6d
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: ValidateAdminCodeSignatures
+        Recursive: false
+        Comment: "Only elevate executable files that are signed and validated, 0 = Disabled (Default), 1 = Enabled (Force PKI certification path validation)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/a9b816e0-075b-4674-a1a9-cecd1d9523e7
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: EnableSecureUIAPaths
+        Recursive: false
+        Comment: "Only elevate UIAccess applications that are installed in secure locations, 0 = Disabled (User Interface Accessibility Integrity Level in Insecure Locations Allowed), 1 = Enabled (Default)"
+
+# https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/settings-and-configuration?tabs=intune
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: PromptOnSecureDesktop
+        Recursive: false
+        Comment: "Switch to the secure desktop when prompting for elevation, 0 = Disabled (Secure Desktop Off), 1 = Enabled (Default)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/9ad50fd3-4d8d-4870-9f5b-978ce292b9d8
+
+    -
+        Description: User Account Control (UAC)
+        HiveType: SOFTWARE
+        Category: Threat Hunting
+        KeyPath: Microsoft\Windows\CurrentVersion\Policies\System
+        ValueName: EnableVirtualization
+        Recursive: false
+        Comment: "Virtualize file and registry write failures to per-user locations, 0 = Disabled (Fail to Write Data), 1 = Enabled (Default)"
+
+# https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpsb/932a34b5-48e7-44c0-b6d2-a57aadef1799
+
+
+    -
+        Description: WDigest
+        HiveType: SYSTEM
+        Category: Threat Hunting
+        KeyPath: ControlSet*\Control\SecurityProviders\WDigest
+        ValueName: UseLogonCredential
+        Recursive: false
+        Comment: "Display whether WDigest is enabled. These registry keys are worth monitoring in an environment as an attacker may wish to set it to 1 to enable Digest password support which forces “clear-text” passwords to be placed in LSASS on any version of Windows from Windows 7 / 2008R2 up to Windows 10 / 2012R2. Furthermore, Windows 8.1 / 2012 R2 and newer do not have a “UseLogonCredential” DWORD value, so the key needs to be added. The existence of the key is suspicious, if not expected."
+
+    -
+        Description: WDigest
+        HiveType: SYSTEM
+        Category: Threat Hunting
+        KeyPath: ControlSet*\Control\SecurityProviders\WDigest
+        ValueName: Negotiate
+        Recursive: false
+        Comment: "Display whether WDigest is enabled. These registry keys are worth monitoring in an environment as an attacker may wish to set it to 1 to enable Digest password support which forces “clear-text” passwords to be placed in LSASS on any version of Windows from Windows 7 / 2008R2 up to Windows 10 / 2012R2. "
+
+# https://docs.velociraptor.app/artifact_references/pages/windows.registry.wdigest/
+# https://medium.com/blue-team/preventing-mimikatz-attacks-ed283e7ebdd5
+# https://www.ired.team/offensive-security/credential-access-and-credential-dumping/forcing-wdigest-to-store-credentials-in-plaintext
 
 # More to come...stay tuned!
