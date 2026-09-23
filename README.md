@@ -38,6 +38,9 @@ For a more complete DFIR environment, the following tools are also recommended:
 * [**WinDbg**](https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/) — debugging and crash dump / memory analysis
 * [**DCode**](https://www.digital-detective.net/dcode/) — forensic timestamp decoding and analysis
 * [**Volatility 2**](https://github.com/volatilityfoundation/volatility) & [**Volatility 3**](https://github.com/volatilityfoundation/volatility3) — memory forensics and RAM dump analysis
+* [**Wireshark**](https://www.wireshark.org/?utm_source=chatgpt.com) — network protocol analysis and packet capture investigation
+* [**Brim**](https://github.com/brimdata?utm_source=chatgpt.com) — network security investigation and log analysis
+* [**WSL**](https://learn.microsoft.com/en-us/windows/wsl/?utm_source=chatgpt.com) — Linux environment for Windows and DFIR tools
 
 ---
 
