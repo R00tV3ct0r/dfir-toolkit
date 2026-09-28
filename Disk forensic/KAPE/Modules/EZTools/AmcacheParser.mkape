@@ -3,7 +3,7 @@ Category: ProgramExecution
 Author: Eric Zimmerman
 Version: 1.1
 Id: 4190c518-524f-4623-8038-a014784c018c
-BinaryUrl: https://f001.backblazeb2.com/file/EricZimmermanTools/AmcacheParser.zip
+BinaryUrl: https://download.ericzimmermanstools.com/AmcacheParser.zip
 ExportFormat: csv
 FileMask: Amcache.hve
 Processors:
@@ -17,3 +17,4 @@ Processors:
 # https://binaryforay.blogspot.com/2015/07/amcacheparser-reducing-noise-finding.html
 # https://www.youtube.com/watch?v=ZKlyu-HOvxY
 # https://www.youtube.com/watch?v=GhCZfCzn2l0
+# https://leanpub.com/eztoolsmanuals

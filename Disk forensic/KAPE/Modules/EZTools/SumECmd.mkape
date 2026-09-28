@@ -3,7 +3,7 @@ Category: SUMDatabase
 Author: Andrew Rathbun
 Version: 1.1
 Id: ac99af84-33b7-4f85-a9fa-146cd2fd6e31
-BinaryUrl: https://f001.backblazeb2.com/file/EricZimmermanTools/SumECmd.zip
+BinaryUrl: https://download.ericzimmermanstools.com/SumECmd.zip
 ExportFormat: csv
 Processors:
     -
@@ -16,6 +16,7 @@ Processors:
 # https://advisory.kpmg.us/blog/2021/digital-forensics-incident-response.html
 # https://twitter.com/EricRZimmerman/status/1363878700123643904?s=20
 # https://svch0st.medium.com/windows-user-access-logs-ual-9580f1100635
+# https://leanpub.com/eztoolsmanuals
 # .\KAPE\Targets\Windows\LogFiles.tkape will capture the SUM Database which is located at C:\Windows\System32\LogFiles\SUM
 # This Module is meant to work in conjunction with the LogFiles.tkape acquiring the necessary files for SumECmd to parse in one fell swoop.
 # When running this Module by itself, make sure your Module Source is pointed to the root of a drive or a folder path with structure similar to what is listed within the CommandLine above, if possible.

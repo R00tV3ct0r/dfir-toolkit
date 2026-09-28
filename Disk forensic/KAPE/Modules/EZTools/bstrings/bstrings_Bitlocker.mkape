@@ -3,7 +3,7 @@ Category: KeywordSearches
 Author: Chris Kudless, Georg Lauenstein
 Version: 1.1
 Id: 828d447b-5a26-4f09-a6d8-fa50b4d0b525
-BinaryUrl: https://f001.backblazeb2.com/file/EricZimmermanTools/bstrings.zip
+BinaryUrl: https://download.ericzimmermanstools.com/bstrings.zip
 ExportFormat: txt
 Processors:
     -
@@ -17,3 +17,4 @@ Processors:
 # https://www.youtube.com/watch?v=GhCZfCzn2l0
 # https://binaryforay.blogspot.com/search?q=bstrings
 # https://www.sans.org/posters/eric-zimmerman-tools-cheat-sheet/
+# https://leanpub.com/eztoolsmanuals

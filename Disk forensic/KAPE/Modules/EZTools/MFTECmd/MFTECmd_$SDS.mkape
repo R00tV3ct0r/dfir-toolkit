@@ -1,11 +1,11 @@
 Description: 'MFTECmd: process $SDS files'
 Category: FileSystem
 Author: Eric Zimmerman
-Version: 1.0
+Version: 1.1
 Id: 7ef84a6b-5215-46bb-af2a-3339a4247e41
-BinaryUrl: https://f001.backblazeb2.com/file/EricZimmermanTools/MFTECmd.zip
+BinaryUrl: https://download.ericzimmermanstools.com/MFTECmd.zip
 ExportFormat: csv
-FileMask: $Secure_$SDS
+FileMask: $Secure_$SDS|$Secure%3A$SDS
 Processors:
     -
         Executable: MFTECmd.exe
@@ -21,3 +21,4 @@ Processors:
 # https://binaryforay.blogspot.com/2018/06/introducing-mftecmd.html
 # https://aboutdfir.com/toolsandartifacts/windows/mft-explorer-mftecmd/
 # https://www.youtube.com/watch?v=GhCZfCzn2l0
+# https://leanpub.com/eztoolsmanuals

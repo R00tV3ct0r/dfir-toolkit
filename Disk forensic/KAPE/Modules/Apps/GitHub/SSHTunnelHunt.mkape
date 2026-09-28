@@ -1,0 +1,16 @@
+Description: Search command history and text artifacts for SSH tunneling and pivoting commands
+Category: Apps
+Author: Aashiq Ahmed
+Version: 1.0
+Id: 3a5b2f54-2b1d-4c7a-9a9e-6c7d52b7a8a1
+BinaryUrl: https://raw.githubusercontent.com/cyber20233/SSHCommandHunt/main/SSHCommandHunt.ps1
+ExportFormat: csv
+
+Processors:
+  -
+    Executable: powershell.exe
+    CommandLine: -ExecutionPolicy Bypass -NoProfile -File .\Modules\bin\SSHCommandHunt.ps1 -Source %sourceDirectory% -Out %destinationDirectory%\SSHCommandHits.csv
+    ExportFormat: csv
+
+# Documentation
+# Searches artifact text for command patterns associated with SSH tunneling and common pivoting tools such as ssh -L/-R/-D, plink, netsh portproxy, chisel, ngrok, cloudflared, ligolo, frp, and socat.

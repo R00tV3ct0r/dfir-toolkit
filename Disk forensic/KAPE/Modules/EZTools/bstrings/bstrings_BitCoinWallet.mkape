@@ -3,7 +3,7 @@ Category: KeywordSearches
 Author: Andrew Rathbun, Georg Lauenstein
 Version: 1.1
 Id: 9518cb7b-d8e7-4b11-ad73-c280bd892474
-BinaryUrl: https://f001.backblazeb2.com/file/EricZimmermanTools/bstrings.zip
+BinaryUrl: https://download.ericzimmermanstools.com/bstrings.zip
 ExportFormat: txt
 Processors:
     -
@@ -17,3 +17,4 @@ Processors:
 # https://www.youtube.com/watch?v=GhCZfCzn2l0
 # https://binaryforay.blogspot.com/search?q=bstrings
 # https://www.sans.org/posters/eric-zimmerman-tools-cheat-sheet/
+# https://leanpub.com/eztoolsmanuals

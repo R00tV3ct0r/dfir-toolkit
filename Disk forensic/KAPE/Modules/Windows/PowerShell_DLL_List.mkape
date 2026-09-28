@@ -1,13 +1,13 @@
 Description: DLL List
 Category: LiveResponse
-Author: nov3mb3r
-Version: 1.0
+Author: nov3mb3r, JorZay
+Version: 1.1
 Id: 19e6448f-f94b-49a4-bc16-26080b7c0592
 ExportFormat: txt
 Processors:
     -
         Executable: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-        CommandLine: -Command "gps | Format-List ProcessName, @{l="Modules";e={$_.Modules|Out-String}}"
+        CommandLine: -Command "gps | Format-List ProcessName, @{l=\"Modules\";e={$_.Modules|Out-String}}"
         ExportFormat: txt
         ExportFile: dlllist.txt
 

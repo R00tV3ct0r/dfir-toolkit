@@ -1,6 +1,6 @@
 Description: Antivirus
 Author: Andrew Rathbun
-Version: 1.2
+Version: 1.5
 Id: 280c6a63-f6ab-438a-b40b-ca42fa78315f
 RecreateDirectories: true
 Targets:
@@ -25,9 +25,21 @@ Targets:
         Category: Antivirus
         Path: ComboFix.tkape
     -
+        Name: CrowdStrikeFalcon
+        Category: Antivirus
+        Path: CrowdStrikeFalcon.tkape
+    -
         Name: Cybereason
         Category: Antivirus
         Path: Cybereason.tkape
+    -
+        Name: Cylance
+        Category: Antivirus
+        Path: Cylance.tkape
+    -
+        Name: Elastic Defend
+        Category: Antivirus
+        Path: ElasticDefend.tkape
     -
         Name: Emsisoft
         Category: Antivirus
@@ -56,6 +68,10 @@ Targets:
         Name: McAfee ePO
         Category: Antivirus
         Path: McAfee_ePO.tkape
+    -
+        Name: Microsoft Safety Scanner
+        Category: Antivirus
+        Path: MicrosoftSafetyScanner.tkape
     -
         Name: RogueKiller
         Category: Antivirus

@@ -1,15 +1,15 @@
 Description: SUM Database
-Author: Andrew Rathbun
-Version: 1.0
-Id: 2f828ec7-75fc-4e46-a160-16d5d1b30118
+Author: Andrew Rathbun, Yogesh Khatri
+Version: 1.1
+Id: f548fd75-def3-4129-bd50-4933c98fe65a
 RecreateDirectories: true
 Targets:
     -
         Name: SUM Database (.mdb files)
         Category: Logs
-        Path: C:\Windows\System32\LogFiles\SUM
-        FileMask: '*.mdb'
-        Comment: "Grabs Current.mdb, SystemIdentity.mdb, and [GUID].mdb"
+        Path: C:\Windows\System32\LogFiles\SUM\
+        Recursive: true
+        Comment: "Grabs Current.mdb, SystemIdentity.mdb, [GUID].mdb and associated ESE db log files"
 
 # Documentation
 # https://advisory.kpmg.us/blog/2021/digital-forensics-incident-response.html
@@ -17,4 +17,5 @@ Targets:
 # https://github.com/EricZimmerman/Sum - be sure to follow the guide here for repairing the DB prior to parsing
 # https://github.com/brimorlabs/KStrike
 # https://docs.microsoft.com/en-us/windows-server/administration/user-access-logging/manage-user-access-logging
+# https://www.thedfirspot.com/post/sum-ual-investigating-server-access-with-user-access-logging
 # LogFiles.tkape Target acquires this as well, but this is a more specific Target in that it ONLY grabs the SUM Database artifacts and nothing else, unlike LogFiles.tkape

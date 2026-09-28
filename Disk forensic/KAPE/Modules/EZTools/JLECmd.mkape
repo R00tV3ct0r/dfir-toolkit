@@ -3,7 +3,7 @@ Category: FileFolderAccess
 Author: Eric Zimmerman
 Version: 1.1
 Id: 81fe4336-eb10-4733-a770-cb57ec9bd108
-BinaryUrl: https://f001.backblazeb2.com/file/EricZimmermanTools/JLECmd.zip
+BinaryUrl: https://download.ericzimmermanstools.com/JLECmd.zip
 ExportFormat: csv
 Processors:
     -
@@ -25,3 +25,4 @@ Processors:
 # https://www.youtube.com/watch?v=wu4-nREmzGM
 # https://www.youtube.com/watch?v=GhCZfCzn2l0
 # https://digital-forensics.sans.org/media/EricZimmermanCommandLineToolsCheatSheet-v1.0.pdf
+# https://leanpub.com/eztoolsmanuals
