@@ -1,0 +1,165 @@
+Description: Custom
+Author: RootVector
+Version: 1.2
+Id: 992be09a-8412-4d7f-aaea-5a5ac6f2b01a
+RecreateDirectories: true
+Targets:
+    # ---- Base !SANS_Triage v1.5 ----
+    -
+        Name: Antivirus
+        Category: Antivirus
+        Path: Antivirus.tkape
+    -
+        Name: CloudStorage_Metadata
+        Category: Apps
+        Path: CloudStorage_Metadata.tkape
+    -
+        # Already collected by CombinedLogs:
+        # - PowerShellConsole
+        # - PowerShellTranscripts
+        # - USBDevicesLogs
+        # - WindowsFirewall
+        # - NETCLRUsageLogs
+        Name: CombinedLogs
+        Category: WindowsLogs
+        Path: CombinedLogs.tkape
+    -
+        Name: GroupPolicy
+        Category: GroupPolicy
+        Path: GroupPolicy.tkape
+    -
+        # Already collected by EvidenceOfExecution:
+        # - Amcache
+        # - AppCompatPCA
+        # - Prefetch
+        # - RecentFileCache
+        # - Syscache
+        Name: EvidenceOfExecution
+        Category: EvidenceOfExecution
+        Path: EvidenceOfExecution.tkape
+    -
+        Name: FileSystem
+        Category: FileSystem
+        Path: FileSystem.tkape
+    -
+        Name: FTPClients
+        Category: FTP
+        Path: FTPClients.tkape
+    -
+        Name: LNKFilesAndJumpLists
+        Category: LNKFiles
+        Path: LNKFilesAndJumpLists.tkape
+    -
+        Name: MessagingClients
+        Category: MessagingClients
+        Path: MessagingClients.tkape
+    -
+        Name: NetworkScanner
+        Category: Apps
+        Path: NetworkScanner.tkape
+    -
+        Name: RegistryHives
+        Category: Registry
+        Path: RegistryHives.tkape
+    -
+        # Already collected by RemoteAccess:
+        # - QuickAssist
+        # - RDPCache
+        # - RDPLogs
+        Name: RemoteAccess
+        Category: ApplicationLogs
+        Path: RemoteAdmin.tkape
+    -
+        Name: ScheduledTasks
+        Category: ScheduledTasks
+        Path: ScheduledTasks.tkape
+    -
+        Name: SRUM
+        Category: Execution
+        Path: SRUM.tkape
+    -
+        Name: SUM
+        Category: Logs
+        Path: SUM.tkape
+    -
+        Name: WER
+        Category: WER
+        Path: WER.tkape
+    -
+        Name: ThumbCache
+        Category: FileKnowledge
+        Path: Thumbcache.tkape
+    -
+        Name: WBEM
+        Category: WBEM
+        Path: WBEM.tkape
+    -
+        Name: BITS
+        Category: BITS
+        Path: BITS.tkape
+    -
+        Name: WebBrowsers
+        Category: Communications
+        Path: WebBrowsers.tkape
+    -
+        Name: WindowsIndexSearch
+        Category: FileKnowledge
+        Path: WindowsIndexSearch.tkape
+    -
+        Name: WindowsTimeline
+        Category: EvidenceOfExecution
+        Path: WindowsTimeline.tkape
+
+    # ---- Custom additions ----
+    -
+        # Already collected by RecycleBin :
+        # - RecycleBin_InfoFiles.tkape
+        # - RecycleBin_DataFiles.tkape
+        Name: RecycleBin
+        Category: FileDeletion
+        Path: RecycleBin.tkape
+
+    -
+        Name: MemoryFiles
+        Category: MemoryFiles
+        Path: MemoryFiles.tkape
+    -
+        Name: HostsFile
+        Category: Network
+        Path: HostsFile.tkape
+    -
+        Name: StartupFolders
+        Category: Autoruns
+        Path: StartupFolders.tkape
+    -
+        Name: WindowsNotificationsDB
+        Category: Apps
+        Path: WindowsNotificationsDB.tkape
+    -
+        Name: OfficeAutosave
+        Category: Apps
+        Path: OfficeAutosave.tkape
+    -
+        Name: OfficeDocumentCache
+        Category: Apps
+        Path: OfficeDocumentCache.tkape
+    -
+        Name: MicrosoftStickyNotes
+        Category: Apps
+        Path: MicrosoftStickyNotes.tkape
+    -
+        Name: Notepad++
+        Category: Apps
+        Path: Notepad++.tkape
+    -
+        Name: SDB
+        Category: Persistence
+        Path: SDB.tkape
+    -
+        Name: EventTranscriptDB
+        Category: Telemetry
+        Path: EventTranscriptDB.tkape
+    -
+        Name: WindowsCopilotRecall
+        Category: Apps
+        Path: WindowsCopilotRecall.tkape
